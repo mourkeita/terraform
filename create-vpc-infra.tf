@@ -125,7 +125,7 @@ resource "aws_security_group" "db-access" {
 
 resource "aws_instance" "db-postgres" {
   instance_type = "t2.micro"
-  ami = "ami-0fd8802f94ed1c969"
+  ami = "ami-0493936afbe820b28"
   availability_zone = "eu-west-1a"
   subnet_id = aws_subnet.private.id
   vpc_security_group_ids = [aws_security_group.db-access.id]
@@ -162,7 +162,7 @@ resource "aws_eip" "nginx" {
 
 resource "aws_instance" "web-nginx" {
   instance_type = "t2.micro"
-  ami = "ami-0fd8802f94ed1c969"
+  ami = "ami-0493936afbe820b28"
   availability_zone = "eu-west-1a"
   subnet_id = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.ssh-internet-access.id]
